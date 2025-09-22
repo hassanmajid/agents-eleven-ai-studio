@@ -110,16 +110,16 @@ const Industries = () => {
 
           {/* Main Content Layout */}
           <div className="relative">
-            {/* Desktop & Tablet Layout - Stair Pattern */}
-            <div className="hidden md:flex md:items-start">
-              {/* Left Content - Stair Pattern Cards */}
-              <div className="w-2/5 xl:w-[40%] relative z-20 pr-4 md:pr-6 lg:pr-8">
+            {/* Desktop & Tablet Layout - Three Column Layout */}
+            <div className="hidden md:flex md:items-start md:gap-8">
+              {/* Left Industries */}
+              <div className="flex-1 relative z-20">
                 <p className={`text-lg font-semibold text-foreground mb-8 transition-all duration-700 delay-300 ${
                   isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                 }`}>We currently work with:</p>
                 
                 <div className="relative">
-                  {industries.map((industry, index) => (
+                  {industries.slice(0, 6).map((industry, index) => (
                     <div 
                       key={index}
                       className={`
@@ -133,21 +133,21 @@ const Industries = () => {
                           : `transition-all duration-[140ms] ${
                               isVisible 
                                 ? 'translate-x-0 translate-y-0 opacity-100' 
-                                : 'translate-x-[-22px] translate-y-[-8px] opacity-0'
+                                : 'translate-x-[-30px] translate-y-[-8px] opacity-0'
                             }`
                         }
                       `}
                       style={{ 
                         transform: isVisible && !prefersReducedMotion 
-                          ? `translateX(${index * 20}px) translateY(${index * 12}px)` 
+                          ? `translateX(${index * 8}px) translateY(${index * 10}px)` 
                           : prefersReducedMotion 
-                            ? `translateX(${index * 20}px) translateY(${index * 12}px)`
-                            : `translateX(${index * 20 - 22}px) translateY(${index * 12 - 8}px)`,
+                            ? `translateX(${index * 8}px) translateY(${index * 10}px)`
+                            : `translateX(${index * 8 - 30}px) translateY(${index * 10 - 8}px)`,
                         transitionDelay: prefersReducedMotion ? '0ms' : `${index * 90}ms`,
                         transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
                         willChange: isVisible ? 'auto' : 'transform, opacity',
                         lineHeight: '1.5',
-                        zIndex: industries.length - index
+                        zIndex: industries.slice(0, 6).length - index
                       }}
                     >
                       <div className="text-white flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
@@ -157,50 +157,92 @@ const Industries = () => {
                     </div>
                   ))}
                 </div>
-
-                <Button 
-                  size="lg" 
-                  className={`mt-12 bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-700 delay-[1200ms] ${
-                    isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
-                  }`}
-                >
-                  BOOK AN APPOINTMENT
-                </Button>
               </div>
 
-              {/* Right Image - Dominant with Soft Merge */}
-              <div className="w-3/5 xl:w-[60%] relative z-10">
+              {/* Center Image */}
+              <div className="flex-1 relative z-10">
                 <div className={`
                   relative transition-all duration-1000 delay-700
-                  ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}
+                  ${isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}
                 `}>
-                  <div className="
-                    relative rounded-2xl overflow-hidden shadow-2xl
-                    md:ml-[-28px] lg:ml-[-32px] xl:ml-[-28px]
-                    md:w-[115%] lg:w-[115%] xl:w-[115%]
-                    transform md:scale-[1.02] lg:scale-[1.05]
-                  ">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <img 
                       src={workflowImage} 
                       alt="Analyst reviewing multi-screen dashboards"
                       className="w-full h-auto object-cover object-center"
                       loading="lazy"
                       style={{
-                        maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 3%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,0.8) 15%, black 25%)',
-                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 3%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,0.8) 15%, black 25%)'
+                        maskImage: 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, black 15%, black 85%, rgba(0,0,0,0.1) 100%)',
+                        WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, black 15%, black 85%, rgba(0,0,0,0.1) 100%)'
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent"></div>
                     
-                    {/* Soft glow effect for merge */}
+                    {/* Soft glow effects for both sides */}
                     <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-primary/8 to-transparent opacity-60"></div>
+                    <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-primary/8 to-transparent opacity-60"></div>
                   </div>
                   
-                  {/* Subtle decorative elements */}
+                  {/* Decorative elements */}
                   <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl"></div>
                   <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-tr from-accent/15 to-transparent rounded-full blur-2xl"></div>
                 </div>
               </div>
+
+              {/* Right Industries */}
+              <div className="flex-1 relative z-20">
+                <div className="relative mt-16">
+                  {industries.slice(6, 11).map((industry, index) => (
+                    <div 
+                      key={index + 6}
+                      className={`
+                        flex items-center gap-3 p-3 rounded-xl bg-primary/60 backdrop-blur-sm
+                        border border-border/50 shadow-lg hover:shadow-xl
+                        transition-all duration-300 cursor-pointer
+                        hover:transform hover:translate-y-[-2px] hover:brightness-106
+                        group relative mb-2 justify-end text-right
+                        ${prefersReducedMotion 
+                          ? (isVisible ? 'opacity-100' : 'opacity-0')
+                          : `transition-all duration-[140ms] ${
+                              isVisible 
+                                ? 'translate-x-0 translate-y-0 opacity-100' 
+                                : 'translate-x-[30px] translate-y-[-8px] opacity-0'
+                            }`
+                        }
+                      `}
+                      style={{ 
+                        transform: isVisible && !prefersReducedMotion 
+                          ? `translateX(${-index * 8}px) translateY(${index * 10}px)` 
+                          : prefersReducedMotion 
+                            ? `translateX(${-index * 8}px) translateY(${index * 10}px)`
+                            : `translateX(${-index * 8 + 30}px) translateY(${index * 10 - 8}px)`,
+                        transitionDelay: prefersReducedMotion ? '0ms' : `${(index + 6) * 90}ms`,
+                        transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
+                        willChange: isVisible ? 'auto' : 'transform, opacity',
+                        lineHeight: '1.5',
+                        zIndex: industries.slice(6, 11).length - index
+                      }}
+                    >
+                      <span className="text-white leading-relaxed text-sm md:text-base order-1">{industry.name}</span>
+                      <div className="text-white flex-shrink-0 transition-transform duration-200 group-hover:scale-110 order-2">
+                        {industry.icon}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Button */}
+            <div className="hidden md:block mt-12 text-center">
+              <Button 
+                size="lg" 
+                className={`bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-700 delay-[1200ms] ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                }`}
+              >
+                BOOK AN APPOINTMENT
+              </Button>
             </div>
 
             {/* Mobile Layout */}
@@ -236,7 +278,7 @@ const Industries = () => {
                     <div 
                       key={index}
                       className={`
-                        flex items-center gap-3 p-2 rounded-lg
+                        flex items-center gap-3 p-2 rounded-lg bg-primary/60 backdrop-blur-sm
                         transition-all duration-300
                         group relative
                         ${prefersReducedMotion 
@@ -255,10 +297,10 @@ const Industries = () => {
                         lineHeight: '1.5'
                       }}
                     >
-                      <div className="text-primary flex-shrink-0">
+                      <div className="text-white flex-shrink-0">
                         {industry.icon}
                       </div>
-                      <span className="text-muted-foreground leading-relaxed py-1">{industry.name}</span>
+                      <span className="text-white leading-relaxed py-1">{industry.name}</span>
                     </div>
                   ))}
                 </div>
