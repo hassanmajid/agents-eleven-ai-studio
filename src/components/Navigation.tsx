@@ -18,16 +18,22 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-14 h-14 flex items-center justify-center">
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 flex items-center justify-center">
               <img 
                 src={agentsElevenLogo} 
                 alt="Agents Eleven Logo" 
-                className="w-14 h-14 object-contain"
+                className="w-12 h-12 object-contain"
               />
             </div>
             <div className="font-display font-bold text-xl text-foreground">
-              Agents <span className="text-primary glow-text">Eleven</span>
+              <span className="relative inline-block">
+                <span className="animate-fade-text opacity-100">Agents</span>{" "}
+                <span className="relative">
+                  <span className="animate-fade-text opacity-100">Eleven</span>
+                  <span className="absolute top-0 left-0 animate-fade-text-alt opacity-0 text-primary glow-text">11</span>
+                </span>
+              </span>
             </div>
           </div>
 

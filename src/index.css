@@ -143,6 +143,16 @@ All colors MUST be HSL.
     100% { background-position: 200% 0; }
   }
 
+  @keyframes fade-text {
+    0%, 40% { opacity: 1; }
+    60%, 100% { opacity: 0; }
+  }
+
+  @keyframes fade-text-alt {
+    0%, 40% { opacity: 0; }
+    60%, 100% { opacity: 1; }
+  }
+
   .ai-pulse {
     animation: ai-pulse 3s ease-in-out infinite;
   }
@@ -159,6 +169,14 @@ All colors MUST be HSL.
     background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
     background-size: 200% 100%;
     animation: ai-shimmer 2s infinite linear;
+  }
+
+  .animate-fade-text {
+    animation: fade-text 4s ease-in-out infinite;
+  }
+
+  .animate-fade-text-alt {
+    animation: fade-text-alt 4s ease-in-out infinite;
   }
 
   /* Neural network pattern */
