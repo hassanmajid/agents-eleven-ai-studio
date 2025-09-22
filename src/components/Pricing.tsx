@@ -28,7 +28,7 @@ const Pricing = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-background">
+    <section id="pricing" ref={sectionRef} className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}

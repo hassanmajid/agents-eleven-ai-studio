@@ -41,12 +41,11 @@ const Contact = () => {
                     <SelectValue placeholder="Campaigns" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="telemarketing">Telemarketing Campaigns</SelectItem>
-                    <SelectItem value="appointment">Appointment Scheduling</SelectItem>
-                    <SelectItem value="demo">Demo Scheduling</SelectItem>
-                    <SelectItem value="transfers">Live Transfers</SelectItem>
-                    <SelectItem value="customer-service">Customer Service</SelectItem>
-                    <SelectItem value="data-entry">Data Entry Service</SelectItem>
+                    <SelectItem value="outbound-calling">Outbound Calling</SelectItem>
+                    <SelectItem value="inbound-customer-service">Inbound Customer Service</SelectItem>
+                    <SelectItem value="data-entry">Data Entry</SelectItem>
+                    <SelectItem value="website-development">Website Development</SelectItem>
+                    <SelectItem value="seo">SEO</SelectItem>
                   </SelectContent>
                 </Select>
                 
@@ -57,11 +56,11 @@ const Contact = () => {
                   <SelectContent>
                     <SelectItem value="accountants">Accountants</SelectItem>
                     <SelectItem value="insurance">Insurance</SelectItem>
-                    <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
-                    <SelectItem value="traditional-marketing">Traditional Marketing</SelectItem>
-                    <SelectItem value="automotive">Automotive</SelectItem>
+                    <SelectItem value="digital-marketing">Digital Marketing Companies</SelectItem>
+                    <SelectItem value="traditional-marketing">Traditional Marketing Companies</SelectItem>
                     <SelectItem value="real-estate">Real Estate</SelectItem>
                     <SelectItem value="software">Software Companies</SelectItem>
+                    <SelectItem value="others">Others</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

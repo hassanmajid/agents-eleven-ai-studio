@@ -53,7 +53,7 @@ const Team = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-muted/30">
+    <section id="team" ref={sectionRef} className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
