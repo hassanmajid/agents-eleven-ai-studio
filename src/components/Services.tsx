@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Megaphone, Camera, Zap, Tablet, Monitor, Code } from "lucide-react";
+import { ArrowRight, Megaphone, Camera, Crown, Tablet, Layout, Code } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -19,7 +19,7 @@ const Services = () => {
       bgColor: "bg-ai-electric/10"
     },
     {
-      icon: <Zap className="w-8 h-8" />,
+      icon: <Crown className="w-8 h-8" />,
       title: "DEMO SCHEDULING",
       description: "Mostly B2B Companies (Software, CRM etc.) hire a full-time dedicated agent at our end for Demo Scheduling. Just provide us with training materials and leave the rest to us.",
       color: "text-ai-neon",
@@ -33,7 +33,7 @@ const Services = () => {
       bgColor: "bg-ai-warm/10"
     },
     {
-      icon: <Monitor className="w-8 h-8" />,
+      icon: <Layout className="w-8 h-8" />,
       title: "UI / UX DESIGN",
       description: "We also specialize in hiring dedicated UI/UX Assistant Designers' for mostly Software and Web/App Development Companies.",
       color: "text-primary",
