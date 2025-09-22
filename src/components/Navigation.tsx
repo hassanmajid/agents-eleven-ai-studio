@@ -19,16 +19,16 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="w-16 h-16 flex items-center justify-center">
               <img 
                 src={agentsElevenLogo} 
                 alt="Agents Eleven Logo" 
-                className="w-12 h-12 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
             <div className="font-display font-bold text-xl text-foreground">
               <span className="relative inline-block">
-                <span className="animate-fade-text opacity-100">Agents</span>{" "}
+                <span>Agents</span>{" "}
                 <span className="relative">
                   <span className="animate-fade-text opacity-100">Eleven</span>
                   <span className="absolute top-0 left-0 animate-fade-text-alt opacity-0 text-primary glow-text">11</span>
