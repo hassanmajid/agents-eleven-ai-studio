@@ -15,7 +15,7 @@ const About = () => {
     description: "We stay ahead of the curve, constantly exploring new AI technologies to deliver cutting-edge solutions that matter."
   }];
   const achievements = [{
-    number: "500+",
+    number: "300+",
     label: "Workflows Automated"
   }, {
     number: "98%",
@@ -79,7 +79,7 @@ const About = () => {
           {/* Values Header */}
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-              At <span className="text-primary">Agents Eleven</span>, we're not just automating processes—we're 
+              At <span className="text-primary">Agents Eleven</span>, We're not just automating processes—We're 
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> reimagining</span> how work gets done.
             </h3>
           </div>
