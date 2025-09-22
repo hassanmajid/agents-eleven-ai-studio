@@ -76,11 +76,17 @@ const About = () => {
             </div>
           </div>
 
+          {/* Values Header */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground">
+              At <span className="text-primary">Agents Eleven</span>, we're not just automating processes—we're 
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> reimagining</span> how work gets done.
+            </h3>
+          </div>
+
           {/* Values */}
           <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => <Card key={index} className="p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-300 ai-float group" style={{
-            animationDelay: `${index * 0.5}s`
-          }}>
+            {values.map((value, index) => <Card key={index} className="p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-300 group">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 text-primary group-hover:bg-primary/20 transition-colors">
                   {value.icon}
                 </div>
