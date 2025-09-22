@@ -1,34 +1,33 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Users, Target, Lightbulb } from "lucide-react";
-
 const About = () => {
-  const values = [
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: "Mission-Driven",
-      description: "We believe AI should amplify human potential, not replace it. Every solution we create is designed to empower your team."
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Human-Centric",
-      description: "Technology is only as good as the people behind it. We prioritize relationships, understanding, and genuine partnership."
-    },
-    {
-      icon: <Lightbulb className="w-6 h-6" />,
-      title: "Innovation First",
-      description: "We stay ahead of the curve, constantly exploring new AI technologies to deliver cutting-edge solutions that matter."
-    }
-  ];
-
-  const achievements = [
-    { number: "500+", label: "Workflows Automated" },
-    { number: "98%", label: "Client Satisfaction" },
-    { number: "60%", label: "Average Time Savings" },
-    { number: "24/7", label: "AI Support Systems" }
-  ];
-
-  return (
-    <section id="about" className="py-24 relative overflow-hidden">
+  const values = [{
+    icon: <Target className="w-6 h-6" />,
+    title: "Mission-Driven",
+    description: "We believe AI should amplify human potential, not replace it. Every solution we create is designed to empower your team."
+  }, {
+    icon: <Users className="w-6 h-6" />,
+    title: "Human-Centric",
+    description: "Technology is only as good as the people behind it. We prioritize relationships, understanding, and genuine partnership."
+  }, {
+    icon: <Lightbulb className="w-6 h-6" />,
+    title: "Innovation First",
+    description: "We stay ahead of the curve, constantly exploring new AI technologies to deliver cutting-edge solutions that matter."
+  }];
+  const achievements = [{
+    number: "500+",
+    label: "Workflows Automated"
+  }, {
+    number: "98%",
+    label: "Client Satisfaction"
+  }, {
+    number: "60%",
+    label: "Average Time Savings"
+  }, {
+    number: "24/7",
+    label: "AI Support Systems"
+  }];
+  return <section id="about" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -51,16 +50,8 @@ const About = () => {
               <h3 className="text-2xl font-display font-semibold text-foreground">
                 Transforming Business Through Intelligence
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                What started as a mission to streamline repetitive tasks has evolved into a comprehensive 
-                AI automation platform. We've helped hundreds of businesses discover the perfect balance 
-                between human creativity and artificial intelligence.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Today, we're not just automating processes—we're reimagining how work gets done. Our team 
-                of AI specialists, workflow engineers, and business strategists work together to create 
-                solutions that don't just save time, but unlock new possibilities.
-              </p>
+              <p className="text-muted-foreground leading-relaxed">Agents Eleven LLC is a Virginia-based company helping businesses across the United States, Canada, Australia, and the United Kingdom optimize their operations. What began with providing dedicated telemarketing agents to reduce the costs of in-house teams has evolved into a comprehensive AI automation platform.</p>
+              <p className="text-muted-foreground leading-relaxed">By blending human creativity with artificial intelligence, we help clients streamline repetitive tasks, cut unnecessary expenses, and focus on growth. Our team of AI specialists, workflow engineers, and business strategists design solutions that not only save time and money but also unlock new opportunities for innovation.</p>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <p className="text-muted-foreground">
@@ -72,16 +63,14 @@ const About = () => {
             <div className="relative">
               <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/10 ai-glow">
                 <div className="grid grid-cols-2 gap-6">
-                  {achievements.map((stat, index) => (
-                    <div key={index} className="text-center">
+                  {achievements.map((stat, index) => <div key={index} className="text-center">
                       <div className="text-3xl font-bold text-primary mb-2 font-display">
                         {stat.number}
                       </div>
                       <div className="text-sm text-muted-foreground">
                         {stat.label}
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </Card>
             </div>
@@ -89,12 +78,9 @@ const About = () => {
 
           {/* Values */}
           <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <Card 
-                key={index} 
-                className="p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-300 ai-float group"
-                style={{ animationDelay: `${index * 0.5}s` }}
-              >
+            {values.map((value, index) => <Card key={index} className="p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-300 ai-float group" style={{
+            animationDelay: `${index * 0.5}s`
+          }}>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 text-primary group-hover:bg-primary/20 transition-colors">
                   {value.icon}
                 </div>
@@ -104,13 +90,10 @@ const About = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
