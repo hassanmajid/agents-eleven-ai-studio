@@ -71,7 +71,7 @@ const Services = () => {
             {services && services.map((service, index) => (
               <Card 
                 key={index} 
-                className="group p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-500 hover:shadow-card" 
+                className="group p-8 bg-card/30 backdrop-blur-sm border-primary/20 hover:border-primary/30 transition-all duration-500 hover:shadow-card shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.25)] ai-glow" 
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`w-16 h-16 ${service.bgColor} rounded-xl flex items-center justify-center mb-6 ${service.color} group-hover:scale-110 transition-transform duration-300`}>
