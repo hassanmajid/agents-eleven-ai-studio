@@ -138,16 +138,10 @@ const Industries = () => {
                         }
                       `}
                       style={{ 
-                        transform: isVisible && !prefersReducedMotion 
-                          ? `translateX(${index * 8}px) translateY(${index * 10}px)` 
-                          : prefersReducedMotion 
-                            ? `translateX(${index * 8}px) translateY(${index * 10}px)`
-                            : `translateX(${index * 8 - 30}px) translateY(${index * 10 - 8}px)`,
                         transitionDelay: prefersReducedMotion ? '0ms' : `${index * 90}ms`,
                         transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
                         willChange: isVisible ? 'auto' : 'transform, opacity',
-                        lineHeight: '1.5',
-                        zIndex: industries.slice(0, 6).length - index
+                        lineHeight: '1.5'
                       }}
                     >
                       <div className="text-white flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
@@ -191,7 +185,7 @@ const Industries = () => {
 
               {/* Right Industries */}
               <div className="flex-1 relative z-20">
-                <div className="relative mt-16">
+                <div className="relative">
                   {industries.slice(6, 11).map((industry, index) => (
                     <div 
                       key={index + 6}
@@ -211,16 +205,10 @@ const Industries = () => {
                         }
                       `}
                       style={{ 
-                        transform: isVisible && !prefersReducedMotion 
-                          ? `translateX(${-index * 8}px) translateY(${index * 10}px)` 
-                          : prefersReducedMotion 
-                            ? `translateX(${-index * 8}px) translateY(${index * 10}px)`
-                            : `translateX(${-index * 8 + 30}px) translateY(${index * 10 - 8}px)`,
                         transitionDelay: prefersReducedMotion ? '0ms' : `${(index + 6) * 90}ms`,
                         transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
                         willChange: isVisible ? 'auto' : 'transform, opacity',
-                        lineHeight: '1.5',
-                        zIndex: industries.slice(6, 11).length - index
+                        lineHeight: '1.5'
                       }}
                     >
                       <span className="text-white leading-relaxed text-sm md:text-base order-1">{industry.name}</span>
