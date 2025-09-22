@@ -79,7 +79,7 @@ const About = () => {
           {/* Values Header */}
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-              At <span className="text-primary">Agents Eleven</span>, We're not just automating processes—We're 
+              At <span className="text-primary">Agents Eleven</span>, we're not just automating processes—We're 
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> reimagining</span> how work gets done.
             </h3>
           </div>
