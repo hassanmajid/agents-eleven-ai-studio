@@ -47,6 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // AI-specific colors
+        "ai-glow": "hsl(var(--ai-glow))",
+        "ai-neon": "hsl(var(--ai-neon))",
+        "ai-electric": "hsl(var(--ai-electric))",
+        "ai-warm": "hsl(var(--ai-warm))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +67,20 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
+      },
+      backgroundImage: {
+        "gradient-ai-primary": "var(--gradient-ai-primary)",
+        "gradient-ai-hero": "var(--gradient-ai-hero)",
+        "gradient-ai-glow": "var(--gradient-ai-glow)",
+      },
+      boxShadow: {
+        "ai-glow": "var(--shadow-ai-glow)",
+        "ai-intense": "var(--shadow-ai-intense)",
+        "card": "var(--shadow-card)",
       },
       keyframes: {
         "accordion-down": {
