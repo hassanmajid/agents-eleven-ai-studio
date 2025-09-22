@@ -19,11 +19,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 flex items-center justify-center">
+            <div className="w-14 h-14 flex items-center justify-center">
               <img 
                 src={agentsElevenLogo} 
                 alt="Agents Eleven Logo" 
-                className="w-10 h-10 object-contain"
+                className="w-14 h-14 object-contain"
               />
             </div>
             <div className="font-display font-bold text-xl text-foreground">
