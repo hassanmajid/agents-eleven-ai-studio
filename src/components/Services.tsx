@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Camera, Crown, Tablet, Layout, Code } from "lucide-react";
 
 const Services = () => {
+  // Force refresh to clear Monitor reference
   const services = [
     {
       icon: <Megaphone className="w-8 h-8" />,
