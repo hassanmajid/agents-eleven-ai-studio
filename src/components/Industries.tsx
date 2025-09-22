@@ -127,7 +127,7 @@ const Industries = () => {
                         border border-border/50 shadow-lg hover:shadow-xl
                         transition-all duration-300 cursor-pointer
                         hover:transform hover:translate-y-[-2px] hover:brightness-106
-                        group relative mb-2
+                        group relative mb-3
                         ${prefersReducedMotion 
                           ? (isVisible ? 'opacity-100' : 'opacity-0')
                           : `transition-all duration-[140ms] ${
@@ -200,7 +200,7 @@ const Industries = () => {
                         border border-border/50 shadow-lg hover:shadow-xl
                         transition-all duration-300 cursor-pointer
                         hover:transform hover:translate-y-[-2px] hover:brightness-106
-                        group relative mb-2 justify-end text-right
+                        group relative mb-3 justify-end text-right
                         ${prefersReducedMotion 
                           ? (isVisible ? 'opacity-100' : 'opacity-0')
                           : `transition-all duration-[140ms] ${

@@ -86,7 +86,7 @@ const About = () => {
 
           {/* Values */}
           <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => <Card key={index} className="p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-300 group">
+            {values.map((value, index) => <Card key={index} className="p-8 bg-card/30 backdrop-blur-sm border-primary/20 hover:border-primary/30 transition-all duration-300 group shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.25)] ai-glow">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 text-primary group-hover:bg-primary/20 transition-colors">
                   {value.icon}
                 </div>

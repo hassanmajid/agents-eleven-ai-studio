@@ -49,7 +49,7 @@ const Pricing = () => {
           {/* Stats Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className={`
-              bg-card rounded-2xl p-8 text-center border shadow-lg hover:shadow-xl
+              bg-card rounded-2xl p-8 text-center border-primary/20 hover:border-primary/30 shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.25)] ai-glow
               transition-all duration-700
               ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
             `}
@@ -63,7 +63,7 @@ const Pricing = () => {
             </div>
 
             <div className={`
-              bg-card rounded-2xl p-8 text-center border shadow-lg hover:shadow-xl
+              bg-card rounded-2xl p-8 text-center border-primary/20 hover:border-primary/30 shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.25)] ai-glow
               transition-all duration-700
               ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
             `}
@@ -77,7 +77,7 @@ const Pricing = () => {
             </div>
 
             <div className={`
-              bg-card rounded-2xl p-8 text-center border shadow-lg hover:shadow-xl
+              bg-card rounded-2xl p-8 text-center border-primary/20 hover:border-primary/30 shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.25)] ai-glow
               transition-all duration-700
               ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
             `}
@@ -94,7 +94,7 @@ const Pricing = () => {
           {/* Main Pricing Card */}
           <div className={`
             max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 md:p-12
-            border border-primary/20 shadow-2xl
+            border border-primary/20 hover:border-primary/30 shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.25)] ai-glow
             transition-all duration-700 delay-900
             ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
           `}>

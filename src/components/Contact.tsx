@@ -21,7 +21,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm border border-primary/20 hover:border-primary/30 rounded-2xl p-8 md:p-12 shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.25)] ai-glow transition-all duration-500">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <Input 
