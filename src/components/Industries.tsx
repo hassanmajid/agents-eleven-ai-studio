@@ -124,7 +124,7 @@ const Industries = () => {
             {/* Desktop & Tablet Layout - Floating Blocks */}
             <div className="hidden md:block relative min-h-[500px] mb-12">
               {/* Background Image - Only covers block area */}
-              <div className="absolute inset-x-0 top-0 bottom-16 rounded-2xl overflow-hidden">
+              <div className="absolute inset-x-16 top-0 bottom-16 rounded-2xl overflow-hidden">
                 <img 
                   src={workflowImage} 
                   alt="Analyst reviewing multi-screen dashboards"
@@ -134,8 +134,8 @@ const Industries = () => {
                 <div className="absolute inset-0 bg-background/20"></div>
               </div>
 
-              {/* Left Side Industries */}
-              <div className="absolute left-8 top-8 space-y-3">
+              {/* Left Side Industries - Aligned to face center */}
+              <div className="absolute left-4 right-1/2 top-8">
                 {industries.slice(0, 6).map((industry, index) => (
                   <div 
                     key={index}
@@ -144,22 +144,19 @@ const Industries = () => {
                       border border-border/50 shadow-lg hover:shadow-xl
                       transition-all duration-500 cursor-pointer
                       hover:transform hover:translate-y-[-2px] hover:brightness-106
-                      group relative max-w-sm
+                      group relative max-w-lg ml-auto mb-3
                       ${prefersReducedMotion 
                         ? (isVisible ? 'opacity-100' : 'opacity-0')
                         : `transition-all duration-500 ${
                             isVisible 
                               ? 'translate-x-0 translate-y-0 opacity-100' 
-                              : 'translate-x-[-40px] translate-y-[-8px] opacity-0'
+                              : 'translate-x-[-40px] translate-y-0 opacity-0'
                           }`
                       }
                     `}
                     style={{ 
-                      transform: isVisible && !prefersReducedMotion 
-                        ? `translateX(${index * 8}px) translateY(${index * 15}px)` 
-                        : prefersReducedMotion 
-                          ? `translateX(${index * 8}px) translateY(${index * 15}px)`
-                          : `translateX(${index * 8 - 40}px) translateY(${index * 15 - 8}px)`,
+                      marginTop: `${index * 8}px`,
+                      marginRight: `${index * 8}px`,
                       transitionDelay: prefersReducedMotion ? '0ms' : `${index * 150}ms`,
                       transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
                       willChange: isVisible ? 'auto' : 'transform, opacity',
@@ -178,8 +175,8 @@ const Industries = () => {
                 ))}
               </div>
 
-              {/* Right Side Industries */}
-              <div className="absolute right-8 top-16 space-y-3">
+              {/* Right Side Industries - Aligned to face center */}
+              <div className="absolute right-4 left-1/2 top-8">
                 {industries.slice(6, 12).map((industry, index) => (
                   <div 
                     key={index + 6}
@@ -188,22 +185,19 @@ const Industries = () => {
                       border border-border/50 shadow-lg hover:shadow-xl
                       transition-all duration-500 cursor-pointer
                       hover:transform hover:translate-y-[-2px] hover:brightness-106
-                      group relative max-w-sm justify-end text-right
+                      group relative max-w-lg mr-auto mb-3
                       ${prefersReducedMotion 
                         ? (isVisible ? 'opacity-100' : 'opacity-0')
                         : `transition-all duration-500 ${
                             isVisible 
                               ? 'translate-x-0 translate-y-0 opacity-100' 
-                              : 'translate-x-[40px] translate-y-[-8px] opacity-0'
+                              : 'translate-x-[40px] translate-y-0 opacity-0'
                           }`
                       }
                     `}
                     style={{ 
-                      transform: isVisible && !prefersReducedMotion 
-                        ? `translateX(${-index * 8}px) translateY(${index * 15}px)` 
-                        : prefersReducedMotion 
-                          ? `translateX(${-index * 8}px) translateY(${index * 15}px)`
-                          : `translateX(${-index * 8 + 40}px) translateY(${index * 15 - 8}px)`,
+                      marginTop: `${index * 8}px`,
+                      marginLeft: `${index * 8}px`,
                       transitionDelay: prefersReducedMotion ? '0ms' : `${(index + 6) * 150}ms`,
                       transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
                       willChange: isVisible ? 'auto' : 'transform, opacity',
@@ -214,10 +208,10 @@ const Industries = () => {
                     {/* Blur backdrop where block overlaps image */}
                     <div className="absolute inset-0 rounded-xl backdrop-blur-md bg-primary/40 -z-10"></div>
                     
-                    <span className="text-white leading-relaxed text-sm md:text-base font-medium order-1">{industry.name}</span>
-                    <div className="text-white flex-shrink-0 transition-transform duration-200 group-hover:scale-110 order-2">
+                    <div className="text-white flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
                       {industry.icon}
                     </div>
+                    <span className="text-white leading-relaxed text-sm md:text-base font-medium">{industry.name}</span>
                   </div>
                 ))}
               </div>
