@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import agentsElevenLogo from "@/assets/agentseleven_logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-ai-primary rounded-lg flex items-center justify-center ai-glow">
-              <Sparkles className="w-6 h-6 text-primary-foreground" />
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img 
+                src={agentsElevenLogo} 
+                alt="Agents Eleven Logo" 
+                className="w-10 h-10 object-contain"
+              />
             </div>
             <div className="font-display font-bold text-xl text-foreground">
               Agents <span className="text-primary glow-text">Eleven</span>
