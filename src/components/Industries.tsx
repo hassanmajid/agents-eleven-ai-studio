@@ -123,11 +123,11 @@ const Industries = () => {
                     <div 
                       key={index}
                       className={`
-                        flex items-center gap-3 p-3 rounded-xl bg-background/80 backdrop-blur-sm
+                        flex items-center gap-3 p-3 rounded-xl bg-primary/60 backdrop-blur-sm
                         border border-border/50 shadow-lg hover:shadow-xl
                         transition-all duration-300 cursor-pointer
                         hover:transform hover:translate-y-[-2px] hover:brightness-106
-                        group relative mb-4 md:mb-5
+                        group relative mb-2
                         ${prefersReducedMotion 
                           ? (isVisible ? 'opacity-100' : 'opacity-0')
                           : `transition-all duration-[140ms] ${
@@ -139,10 +139,10 @@ const Industries = () => {
                       `}
                       style={{ 
                         transform: isVisible && !prefersReducedMotion 
-                          ? `translateX(${index * 12}px) translateY(${index * 20}px)` 
+                          ? `translateX(${index * 20}px) translateY(${index * 12}px)` 
                           : prefersReducedMotion 
-                            ? `translateX(${index * 12}px) translateY(${index * 20}px)`
-                            : `translateX(${index * 12 - 22}px) translateY(${index * 20 - 8}px)`,
+                            ? `translateX(${index * 20}px) translateY(${index * 12}px)`
+                            : `translateX(${index * 20 - 22}px) translateY(${index * 12 - 8}px)`,
                         transitionDelay: prefersReducedMotion ? '0ms' : `${index * 90}ms`,
                         transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
                         willChange: isVisible ? 'auto' : 'transform, opacity',
@@ -150,10 +150,10 @@ const Industries = () => {
                         zIndex: industries.length - index
                       }}
                     >
-                      <div className="text-primary flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
+                      <div className="text-white flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
                         {industry.icon}
                       </div>
-                      <span className="text-muted-foreground leading-relaxed text-sm md:text-base">{industry.name}</span>
+                      <span className="text-white leading-relaxed text-sm md:text-base">{industry.name}</span>
                     </div>
                   ))}
                 </div>
