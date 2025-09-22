@@ -1,47 +1,41 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot, Workflow, Zap, Database, MessageSquare, BarChart3 } from "lucide-react";
+import { ArrowRight, Megaphone, Camera, Zap, Tablet, Monitor, Code } from "lucide-react";
 const Services = () => {
   const services = [{
-    icon: <Bot className="w-8 h-8" />,
-    title: "AI Process Automation",
-    description: "Transform repetitive tasks into intelligent, self-managing workflows that adapt and improve over time.",
-    features: ["Document Processing", "Data Entry Automation", "Email & Communication", "Report Generation"],
+    icon: <Megaphone className="w-8 h-8" />,
+    title: "TELEMARKETING",
+    description: "We hire/manage a full-time dedicated Telemarketer for you: Business-to-Business (B2B) Or Business-to-Consumer (B2C).",
     color: "text-primary",
     bgColor: "bg-primary/10"
   }, {
-    icon: <Workflow className="w-8 h-8" />,
-    title: "Intelligent Workflows",
-    description: "Design and implement smart workflows that connect your tools, data, and processes seamlessly.",
-    features: ["Multi-System Integration", "Decision Trees", "Approval Processes", "Real-time Monitoring"],
+    icon: <Camera className="w-8 h-8" />,
+    title: "APPOINTMENT SCHEDULING",
+    description: "We hire/manage an experienced dedicated agent at our end to schedule appointments for you with businesses (B2B).",
     color: "text-ai-electric",
     bgColor: "bg-ai-electric/10"
   }, {
-    icon: <Database className="w-8 h-8" />,
-    title: "Data Intelligence",
-    description: "Extract insights and automate decision-making with advanced AI analytics and predictive modeling.",
-    features: ["Predictive Analytics", "Pattern Recognition", "Real-time Insights", "Automated Reporting"],
+    icon: <Zap className="w-8 h-8" />,
+    title: "DEMO SCHEDULING",
+    description: "Mostly B2B Companies (Software, CRM etc.) hire a full-time dedicated agent at our end for Demo Scheduling. Just provide us with training materials and leave the rest to us.",
     color: "text-ai-neon",
     bgColor: "bg-ai-neon/10"
   }, {
-    icon: <MessageSquare className="w-8 h-8" />,
-    title: "AI Communication",
-    description: "Deploy intelligent chatbots and virtual assistants that understand context and provide meaningful responses.",
-    features: ["Customer Support Bots", "Internal AI Assistants", "Lead Qualification", "Multi-channel Support"],
+    icon: <Tablet className="w-8 h-8" />,
+    title: "LIVE TRANSFERS",
+    description: "You can hire a full-time dedicated resource at our end for getting your prospect transferred live to your agents (Example: Personal Insurance Brokers, Financial Advisors etc.).",
     color: "text-ai-warm",
     bgColor: "bg-ai-warm/10"
   }, {
-    icon: <Zap className="w-8 h-8" />,
-    title: "Integration Services",
-    description: "Connect your existing tools and systems with powerful AI capabilities for maximum efficiency.",
-    features: ["API Integrations", "Cloud Migrations", "System Optimization", "Custom Connectors"],
+    icon: <Monitor className="w-8 h-8" />,
+    title: "UI / UX DESIGN",
+    description: "We also specialize in hiring dedicated UI/UX Assistant Designers' for mostly Software and Web/App Development Companies.",
     color: "text-primary",
     bgColor: "bg-primary/10"
   }, {
-    icon: <BarChart3 className="w-8 h-8" />,
-    title: "Performance Analytics",
-    description: "Monitor, measure, and optimize your AI implementations with comprehensive analytics and insights.",
-    features: ["ROI Tracking", "Performance Metrics", "Optimization Recommendations", "Success Monitoring"],
+    icon: <Code className="w-8 h-8" />,
+    title: "WEB DEVELOPMENT",
+    description: "Website Development companies hire an assistant agent with us for Building, Creating and maintaining websites. Including HTML/CSS, .Net, Responsive design, JavaScript, WordPress E-Commerce, Testing and debugging.",
     color: "text-ai-electric",
     bgColor: "bg-ai-electric/10"
   }];
@@ -61,7 +55,7 @@ const Services = () => {
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {services.map((service, index) => <Card key={index} className="group p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-500 hover:shadow-card ai-float" style={{
+            {services.map((service, index) => <Card key={index} className="group p-8 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/20 transition-all duration-500 hover:shadow-card" style={{
             animationDelay: `${index * 0.1}s`
           }}>
                 <div className={`w-16 h-16 ${service.bgColor} rounded-xl flex items-center justify-center mb-6 ${service.color} group-hover:scale-110 transition-transform duration-300`}>
@@ -72,21 +66,9 @@ const Services = () => {
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
-                
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
-                      {feature}
-                    </li>)}
-                </ul>
-                
-                <Button variant="outline" size="sm" className="w-full border-primary/30 text-primary hover:bg-primary/10 group-hover:border-primary/50 transition-all">
-                  Learn More
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
               </Card>)}
           </div>
 
