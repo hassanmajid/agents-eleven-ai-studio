@@ -110,50 +110,57 @@ const Industries = () => {
 
           {/* Main Content Layout */}
           <div className="relative">
-            {/* Desktop & Tablet Layout */}
-            <div className="hidden md:flex md:items-start md:gap-8 lg:gap-12">
-              {/* Left Content */}
-              <div className="flex-1 relative z-10">
-                <p className={`text-lg font-semibold text-foreground mb-6 transition-all duration-700 delay-300 ${
+            {/* Desktop & Tablet Layout - Stair Pattern */}
+            <div className="hidden md:flex md:items-start">
+              {/* Left Content - Stair Pattern Cards */}
+              <div className="w-2/5 xl:w-[40%] relative z-20 pr-4 md:pr-6 lg:pr-8">
+                <p className={`text-lg font-semibold text-foreground mb-8 transition-all duration-700 delay-300 ${
                   isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                 }`}>We currently work with:</p>
                 
-                <div className="space-y-4 pr-4 md:pr-8 lg:pr-12">
+                <div className="relative">
                   {industries.map((industry, index) => (
                     <div 
                       key={index}
                       className={`
-                        flex items-center gap-3 p-2 rounded-lg
+                        flex items-center gap-3 p-3 rounded-xl bg-background/80 backdrop-blur-sm
+                        border border-border/50 shadow-lg hover:shadow-xl
                         transition-all duration-300 cursor-pointer
-                        hover:transform hover:translate-y-[-2px] hover:brightness-105
-                        group relative
+                        hover:transform hover:translate-y-[-2px] hover:brightness-106
+                        group relative mb-4 md:mb-5
                         ${prefersReducedMotion 
                           ? (isVisible ? 'opacity-100' : 'opacity-0')
-                          : `transition-all duration-[120ms] ${
+                          : `transition-all duration-[140ms] ${
                               isVisible 
                                 ? 'translate-x-0 translate-y-0 opacity-100' 
-                                : 'translate-x-[-20px] translate-y-2 opacity-0'
+                                : 'translate-x-[-22px] translate-y-[-8px] opacity-0'
                             }`
                         }
                       `}
                       style={{ 
-                        transitionDelay: prefersReducedMotion ? '0ms' : `${400 + index * 90}ms`,
+                        transform: isVisible && !prefersReducedMotion 
+                          ? `translateX(${index * 12}px) translateY(${index * 20}px)` 
+                          : prefersReducedMotion 
+                            ? `translateX(${index * 12}px) translateY(${index * 20}px)`
+                            : `translateX(${index * 12 - 22}px) translateY(${index * 20 - 8}px)`,
+                        transitionDelay: prefersReducedMotion ? '0ms' : `${index * 90}ms`,
                         transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
                         willChange: isVisible ? 'auto' : 'transform, opacity',
-                        lineHeight: '1.5'
+                        lineHeight: '1.5',
+                        zIndex: industries.length - index
                       }}
                     >
                       <div className="text-primary flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
                         {industry.icon}
                       </div>
-                      <span className="text-muted-foreground leading-relaxed py-1">{industry.name}</span>
+                      <span className="text-muted-foreground leading-relaxed text-sm md:text-base">{industry.name}</span>
                     </div>
                   ))}
                 </div>
 
                 <Button 
                   size="lg" 
-                  className={`mt-8 bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-700 delay-[1400ms] ${
+                  className={`mt-12 bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-700 delay-[1200ms] ${
                     isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                   }`}
                 >
@@ -161,36 +168,37 @@ const Industries = () => {
                 </Button>
               </div>
 
-              {/* Right Image with Soft Overlap */}
-              <div className="relative flex-1 lg:flex-[1.2]">
+              {/* Right Image - Dominant with Soft Merge */}
+              <div className="w-3/5 xl:w-[60%] relative z-10">
                 <div className={`
                   relative transition-all duration-1000 delay-700
                   ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}
                 `}>
                   <div className="
                     relative rounded-2xl overflow-hidden shadow-2xl
-                    md:ml-[-16px] lg:ml-[-32px]
-                    md:w-[116%] lg:w-[120%]
+                    md:ml-[-28px] lg:ml-[-32px] xl:ml-[-28px]
+                    md:w-[115%] lg:w-[115%] xl:w-[115%]
+                    transform md:scale-[1.02] lg:scale-[1.05]
                   ">
                     <img 
                       src={workflowImage} 
-                      alt="Professional analytics dashboard showing workflow optimization and business intelligence data visualization"
-                      className="w-full h-auto object-cover object-left loading-lazy"
+                      alt="Analyst reviewing multi-screen dashboards"
+                      className="w-full h-auto object-cover object-center"
                       loading="lazy"
                       style={{
-                        maskImage: 'radial-gradient(ellipse at right center, transparent 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,0.8) 25%, black 40%)',
-                        WebkitMaskImage: 'radial-gradient(ellipse at right center, transparent 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,0.8) 25%, black 40%)'
+                        maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 3%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,0.8) 15%, black 25%)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 3%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,0.8) 15%, black 25%)'
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent"></div>
                     
-                    {/* Soft glow effect for overlap */}
-                    <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-primary/5 to-transparent"></div>
+                    {/* Soft glow effect for merge */}
+                    <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-primary/8 to-transparent opacity-60"></div>
                   </div>
                   
-                  {/* Decorative elements */}
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-ai-primary rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-ai-electric rounded-full opacity-20 blur-xl"></div>
+                  {/* Subtle decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl"></div>
+                  <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-tr from-accent/15 to-transparent rounded-full blur-2xl"></div>
                 </div>
               </div>
             </div>
