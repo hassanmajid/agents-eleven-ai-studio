@@ -44,71 +44,35 @@ const About = () => {
             </p>
           </div>
 
-          {/* Story - Sticky Stack Section */}
-          <div className="relative" style={{ minHeight: '200vh' }}>
-            <div className="sticky top-24 md:top-24 mb-20">
-              <h3 className="text-2xl md:text-3xl font-display font-semibold text-foreground text-center mb-16">
+          {/* Story */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-display font-semibold text-foreground">
                 Transforming Business Through Intelligence
               </h3>
-              
-              {/* Sticky Stack Container */}
-              <div className="relative max-w-4xl mx-auto">
-                {/* Card 1 */}
-                <div 
-                  className="sticky top-14 md:top-24 z-10 mb-8 animate-fade-in motion-reduce:animate-none"
-                >
-                  <Card className="p-8 md:p-12 bg-card/95 backdrop-blur-sm border-primary/20 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 motion-reduce:hover:scale-100 motion-reduce:transition-none">
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                      Agents Eleven LLC is a Virginia-based company helping businesses across the United States, Canada, Australia, and the United Kingdom optimize their operations. What began with providing dedicated telemarketing agents to reduce the costs of in-house teams has evolved into a comprehensive AI automation platform.
-                    </p>
-                  </Card>
-                </div>
-
-                {/* Card 2 */}
-                <div 
-                  className="sticky top-14 md:top-24 z-20 mb-8 animate-fade-in motion-reduce:animate-none"
-                  style={{ animationDelay: '100ms' }}
-                >
-                  <Card className="p-8 md:p-12 bg-card/95 backdrop-blur-sm border-primary/20 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 motion-reduce:hover:scale-100 motion-reduce:transition-none">
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                      By blending human creativity with artificial intelligence, we help clients streamline repetitive tasks, cut unnecessary expenses, and focus on growth. Our team of AI specialists, workflow engineers, and business strategists design solutions that not only save time and money but also unlock new opportunities for innovation.
-                    </p>
-                  </Card>
-                </div>
-
-                {/* Card 3 */}
-                <div 
-                  className="sticky top-14 md:top-24 z-30 mb-8 animate-fade-in motion-reduce:animate-none"
-                  style={{ animationDelay: '200ms' }}
-                >
-                  <Card className="p-8 md:p-12 bg-card/95 backdrop-blur-sm border-primary/20 shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-all duration-300 motion-reduce:hover:scale-100 motion-reduce:transition-none">
-                    <div className="flex items-start space-x-4">
-                      <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                        <strong className="text-foreground">Trusted Partner:</strong> We become an extension of your team, understanding your unique challenges and crafting personalized AI solutions.
-                      </p>
-                    </div>
-                  </Card>
-                </div>
-
-                {/* Stats Card - Positioned alongside */}
-                <div className="relative z-40 mt-16 max-w-2xl mx-auto">
-                  <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/10 ai-glow">
-                    <div className="grid grid-cols-2 gap-6">
-                      {achievements.map((stat, index) => (
-                        <div key={index} className="text-center">
-                          <div className="text-3xl font-bold text-primary mb-2 font-display">
-                            {stat.number}
-                          </div>
-                          <div className="text-sm text-muted-foreground">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </Card>
-                </div>
+              <p className="text-muted-foreground leading-relaxed">Agents Eleven LLC is a Virginia-based company helping businesses across the United States, Canada, Australia, and the United Kingdom optimize their operations. What began with providing dedicated telemarketing agents to reduce the costs of in-house teams has evolved into a comprehensive AI automation platform.</p>
+              <p className="text-muted-foreground leading-relaxed">By blending human creativity with artificial intelligence, we help clients streamline repetitive tasks, cut unnecessary expenses, and focus on growth. Our team of AI specialists, workflow engineers, and business strategists design solutions that not only save time and money but also unlock new opportunities for innovation.</p>
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <p className="text-muted-foreground">
+                  <strong className="text-foreground">Trusted Partner:</strong> We become an extension of your team, 
+                  understanding your unique challenges and crafting personalized AI solutions.
+                </p>
               </div>
+            </div>
+            <div className="relative">
+              <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/10 ai-glow">
+                <div className="grid grid-cols-2 gap-6">
+                  {achievements.map((stat, index) => <div key={index} className="text-center">
+                      <div className="text-3xl font-bold text-primary mb-2 font-display">
+                        {stat.number}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {stat.label}
+                      </div>
+                    </div>)}
+                </div>
+              </Card>
             </div>
           </div>
 
