@@ -228,8 +228,9 @@ const Industries = () => {
                 className={`bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-700 delay-[1200ms] ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
+                asChild
               >
-                BOOK AN APPOINTMENT
+                <a href="#contact">BOOK AN APPOINTMENT</a>
               </Button>
             </div>
 
@@ -298,8 +299,9 @@ const Industries = () => {
                   className={`mt-8 w-full bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-700 delay-[1600ms] ${
                     isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                   }`}
+                  asChild
                 >
-                  BOOK AN APPOINTMENT
+                  <a href="#contact">BOOK AN APPOINTMENT</a>
                 </Button>
               </div>
             </div>

@@ -7,10 +7,11 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Case Studies", href: "#cases" },
-    { name: "Contact", href: "#contact" },
+    { name: "About Us", href: "#about" },
+    { name: "Expertise", href: "#services" },
+    { name: "Industries", href: "#industries" },
+    { name: "Our Team", href: "#team" },
+    { name: "Pricing", href: "#pricing" },
   ];
 
   return (
@@ -48,8 +49,13 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="default" size="lg" className="bg-gradient-ai-primary ai-glow hover:shadow-ai-intense transition-all duration-300">
-              Get Started
+            <Button 
+              variant="default" 
+              size="lg" 
+              className="bg-gradient-ai-primary ai-glow hover:shadow-ai-intense transition-all duration-300"
+              asChild
+            >
+              <a href="#contact">Contact Us</a>
             </Button>
           </div>
 
@@ -80,8 +86,13 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="default" size="lg" className="bg-gradient-ai-primary ai-glow w-full">
-                Get Started
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="bg-gradient-ai-primary ai-glow w-full"
+                asChild
+              >
+                <a href="#contact">Contact Us</a>
               </Button>
             </div>
           </div>

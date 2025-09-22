@@ -47,16 +47,12 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-ai-primary ai-glow hover:shadow-ai-intense transition-all duration-300 text-lg px-8 py-4 group"
+              asChild
             >
-              Start Your AI Journey
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-primary/30 text-primary hover:bg-primary/10 text-lg px-8 py-4"
-            >
-              Watch Demo
+              <a href="#contact">
+                Start Your AI Journey
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
 

@@ -100,9 +100,15 @@ const Services = () => {
                 and unlock new growth opportunities for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-gradient-ai-primary ai-glow hover:shadow-ai-intense transition-all duration-300">
-                  Schedule Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-ai-primary ai-glow hover:shadow-ai-intense transition-all duration-300"
+                  asChild
+                >
+                  <a href="#contact">
+                    Schedule Consultation
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
                 </Button>
                 <Button variant="outline" size="lg" className="border-primary/30 text-primary hover:bg-primary/10">
                   View Case Studies

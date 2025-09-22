@@ -116,8 +116,9 @@ const Pricing = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-bold px-12 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                asChild
               >
-                Get Started Today
+                <a href="#contact">Get Started Today</a>
               </Button>
 
               <p className="text-sm text-muted-foreground mt-6">
