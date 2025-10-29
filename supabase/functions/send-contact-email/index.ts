@@ -8,10 +8,13 @@ const corsHeaders = {
 
 interface ContactEmailRequest {
   name: string;
-  email: string;
-  campaign: string;
+  designation: string;
+  companyName: string;
   industry: string;
-  message: string;
+  contactNumber: string;
+  email: string;
+  interestedIn: string;
+  comments: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -21,9 +24,9 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, campaign, industry, message }: ContactEmailRequest = await req.json();
+    const { name, designation, companyName, industry, contactNumber, email, interestedIn, comments }: ContactEmailRequest = await req.json();
 
-    console.log("Processing contact form submission:", { name, email, campaign, industry });
+    console.log("Processing contact form submission:", { name, companyName, email, interestedIn });
 
     // Get SMTP credentials from environment
     const smtpHost = Deno.env.get("SMTP_HOST");
@@ -40,12 +43,15 @@ const handler = async (req: Request): Promise<Response> => {
       New Contact Form Submission
       
       Name: ${name}
-      Email: ${email}
-      Campaign: ${campaign}
+      Designation: ${designation}
+      Company Name: ${companyName}
       Industry: ${industry}
+      Contact Number: ${contactNumber}
+      Email: ${email}
+      Interested In: ${interestedIn}
       
-      Message:
-      ${message}
+      Comments:
+      ${comments}
     `;
 
     // Use SMTP to send email
@@ -53,8 +59,8 @@ const handler = async (req: Request): Promise<Response> => {
     
     const emailData = [
       `From: ${smtpUser}`,
-      `To: ${smtpUser}`,
-      `Subject: New Contact Form Submission from ${name}`,
+      `To: mason@agentseleven.com`,
+      `Subject: New Contact Form Submission from ${name} - ${companyName}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/plain; charset=utf-8`,
       ``,
@@ -91,7 +97,7 @@ const handler = async (req: Request): Promise<Response> => {
     await sendCommand(btoa(smtpUser));
     await sendCommand(btoa(smtpPassword));
     await sendCommand(`MAIL FROM:<${smtpUser}>`);
-    await sendCommand(`RCPT TO:<${smtpUser}>`);
+    await sendCommand(`RCPT TO:<mason@agentseleven.com>`);
     await sendCommand("DATA");
     await conn.write(encoder.encode(emailData + "\r\n.\r\n"));
     await readResponse();

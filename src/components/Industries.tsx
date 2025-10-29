@@ -131,14 +131,15 @@ const Industries = () => {
             <h2 className={`text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-6 transition-all duration-700 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              INDUSTRIES WE SERVE
+              AI Works Everywhere.
             </h2>
             
             <p className={`text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto transition-all duration-700 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              Transforming business operations across every sector with our 
-              <span className="font-bold text-primary"> AI-powered solutions</span>
+              From auto dealerships to home services, from digital marketing to healthcare — AI is transforming every industry it touches. 
+              Whether you're in retail, insurance, software, real estate, or travel, intelligent automation is your next competitive edge. 
+              <span className="font-bold text-primary"> If there's a process, AI can make it smarter.</span>
             </p>
           </div>
 

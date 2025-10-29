@@ -29,17 +29,17 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
-            <span className="text-foreground">Intelligence Meets</span>
+            <span className="text-foreground">Stay Ahead of the</span>
             <br />
             <span className="bg-gradient-ai-primary bg-clip-text text-transparent glow-text">
-              Automation
+              Curve!
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            Transform your business with cutting-edge AI automation and intelligent workflows. 
-            We help companies streamline operations, accelerate growth, and unlock the future of work.
+            Revolutionize your business with next-gen AI automation and smart workflows. 
+            We empower companies to streamline operations, boost growth, and embrace the limitless possibilities of AI.
           </p>
 
           {/* CTA Buttons */}

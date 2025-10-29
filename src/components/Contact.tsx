@@ -12,10 +12,13 @@ import { useState } from "react";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
-  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
-  campaign: z.string().min(1, "Please select a campaign"),
+  designation: z.string().trim().min(1, "Designation is required").max(100, "Designation must be less than 100 characters"),
+  companyName: z.string().trim().min(1, "Company name is required").max(150, "Company name must be less than 150 characters"),
   industry: z.string().min(1, "Please select an industry"),
-  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+  contactNumber: z.string().trim().min(1, "Contact number is required").max(20, "Contact number must be less than 20 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  interestedIn: z.string().min(1, "Please select your interest"),
+  comments: z.string().trim().min(1, "Comments are required").max(1000, "Comments must be less than 1000 characters"),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -28,10 +31,13 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
-      email: "",
-      campaign: "",
+      designation: "",
+      companyName: "",
       industry: "",
-      message: "",
+      contactNumber: "",
+      email: "",
+      interestedIn: "",
+      comments: "",
     },
   });
 
@@ -88,7 +94,91 @@ const Contact = () => {
                       <FormItem>
                         <FormControl>
                           <Input 
-                            placeholder="Your Name*" 
+                            placeholder="Name*" 
+                            className="bg-background/60 border-border/50 h-14 text-lg placeholder:text-muted-foreground/70"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="designation"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            placeholder="Designation*" 
+                            className="bg-background/60 border-border/50 h-14 text-lg placeholder:text-muted-foreground/70"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="companyName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            placeholder="Company Name*" 
+                            className="bg-background/60 border-border/50 h-14 text-lg placeholder:text-muted-foreground/70"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="industry"
+                    render={({ field }) => (
+                      <FormItem>
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-background/60 border-border/50 h-14 text-lg">
+                              <SelectValue placeholder="Select Your Industry*" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="accountants">Accountants</SelectItem>
+                            <SelectItem value="insurance">Insurance</SelectItem>
+                            <SelectItem value="automotive">Automotive</SelectItem>
+                            <SelectItem value="digital-marketing">Digital Marketing Companies</SelectItem>
+                            <SelectItem value="traditional-marketing">Traditional Marketing Companies</SelectItem>
+                            <SelectItem value="real-estate">Real Estate</SelectItem>
+                            <SelectItem value="software">Software Companies</SelectItem>
+                            <SelectItem value="healthcare">Healthcare</SelectItem>
+                            <SelectItem value="retail">Retail</SelectItem>
+                            <SelectItem value="travel">Travel & Tourism</SelectItem>
+                            <SelectItem value="others">Others</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="contactNumber"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            type="tel"
+                            placeholder="Contact Number*" 
                             className="bg-background/60 border-border/50 h-14 text-lg placeholder:text-muted-foreground/70"
                             {...field}
                           />
@@ -116,66 +206,35 @@ const Contact = () => {
                   />
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="campaign"
-                    render={({ field }) => (
-                      <FormItem>
-                        <Select onValueChange={field.onChange} value={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="bg-background/60 border-border/50 h-14 text-lg">
-                              <SelectValue placeholder="Campaigns" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="outbound-calling">Outbound Calling</SelectItem>
-                            <SelectItem value="inbound-customer-service">Inbound Customer Service</SelectItem>
-                            <SelectItem value="data-entry">Data Entry</SelectItem>
-                            <SelectItem value="website-development">Website Development</SelectItem>
-                            <SelectItem value="seo">SEO</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="industry"
-                    render={({ field }) => (
-                      <FormItem>
-                        <Select onValueChange={field.onChange} value={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="bg-background/60 border-border/50 h-14 text-lg">
-                              <SelectValue placeholder="Select Your Industry" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="accountants">Accountants</SelectItem>
-                            <SelectItem value="insurance">Insurance</SelectItem>
-                            <SelectItem value="digital-marketing">Digital Marketing Companies</SelectItem>
-                            <SelectItem value="traditional-marketing">Traditional Marketing Companies</SelectItem>
-                            <SelectItem value="real-estate">Real Estate</SelectItem>
-                            <SelectItem value="software">Software Companies</SelectItem>
-                            <SelectItem value="others">Others</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="interestedIn"
+                  render={({ field }) => (
+                    <FormItem>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="bg-background/60 border-border/50 h-14 text-lg">
+                            <SelectValue placeholder="Interested In*" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="ai-automation">AI Automation</SelectItem>
+                          <SelectItem value="dedicated-resource">Hiring a Dedicated Resource</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 
                 <FormField
                   control={form.control}
-                  name="message"
+                  name="comments"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <Textarea 
-                          placeholder="Message*" 
+                          placeholder="Comments*" 
                           rows={6}
                           className="bg-background/60 border-border/50 text-lg placeholder:text-muted-foreground/70 resize-none"
                           {...field}
@@ -185,6 +244,13 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
+                
+                <div className="bg-muted/30 rounded-lg p-4 border border-border/50">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">Note:</span> This form is protected against spam. 
+                    By submitting, you agree to be contacted by our team.
+                  </p>
+                </div>
                 
                 <Button 
                   type="submit" 

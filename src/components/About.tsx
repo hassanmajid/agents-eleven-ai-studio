@@ -36,11 +36,11 @@ const About = () => {
               <span className="text-sm font-medium text-primary">Our Story</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
-              Where <span className="text-primary glow-text">Innovation</span> Meets Purpose
+              The <span className="text-primary glow-text">Future</span> We Imagined Has Arrived
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Founded on the belief that AI should enhance human capabilities, Agents Eleven emerged from 
-              a simple question: How can intelligent automation make work more meaningful?
+              It all started with a mission, helping businesses boost sales and simplify their operations. 
+              But at Agents Eleven, we saw something bigger on the horizon: a world where Artificial Intelligence doesn't replace people, it empowers them.
             </p>
           </div>
 
@@ -48,10 +48,10 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="space-y-6">
               <h3 className="text-2xl font-display font-semibold text-foreground">
-                Transforming Business Through Intelligence
+                Your Partner in the AI Revolution
               </h3>
-              <p className="text-muted-foreground leading-relaxed">Agents Eleven LLC is a Virginia-based company helping businesses across the United States, Canada, Australia, and the United Kingdom optimize their operations. What began with providing dedicated telemarketing agents to reduce the costs of in-house teams has evolved into a comprehensive AI automation platform.</p>
-              <p className="text-muted-foreground leading-relaxed">By blending human creativity with artificial intelligence, we help clients streamline repetitive tasks, cut unnecessary expenses, and focus on growth. Our team of AI specialists, workflow engineers, and business strategists design solutions that not only save time and money but also unlock new opportunities for innovation.</p>
+              <p className="text-muted-foreground leading-relaxed">At Agents Eleven LLC, we help North American businesses embrace the future of work through AI automation. What began in Virginia as a mission to cut costs with dedicated telemarketing agents has evolved into a next-generation platform that streamlines operations, boosts productivity, and drives smarter growth.</p>
+              <p className="text-muted-foreground leading-relaxed">By blending human expertise with cutting-edge AI technology, we help clients eliminate repetitive tasks, reduce operational overhead, and unlock new revenue streams. Our team of AI specialists, automation engineers, and business strategists creates tailored solutions that transform how you work—making your business faster, more efficient, and ready for what's next.</p>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <p className="text-muted-foreground">
