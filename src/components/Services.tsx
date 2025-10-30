@@ -1,49 +1,48 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Megaphone, Camera, Crown, Tablet, Layout, Code } from "lucide-react";
+import { ArrowRight, PhoneIncoming, Send, Home, Car, Database, BarChart3 } from "lucide-react";
 
 const Services = () => {
-  // Force refresh to clear Monitor reference
   const services = [
     {
-      icon: <Megaphone className="w-8 h-8" />,
-      title: "TELEMARKETING",
-      description: "We hire/manage a full-time dedicated Telemarketer for you: Business-to-Business (B2B) Or Business-to-Consumer (B2C).",
+      icon: <PhoneIncoming className="w-8 h-8" />,
+      title: "Inbound Agents",
+      description: "AI-driven inbound agents manage customer queries, support tickets, and information requests around the clock. They handle FAQs, capture leads, and route complex cases to the right human, ensuring no opportunity is missed.",
       color: "text-primary",
       bgColor: "bg-primary/10"
     },
     {
-      icon: <Camera className="w-8 h-8" />,
-      title: "APPOINTMENT SCHEDULING",
-      description: "We hire/manage an experienced dedicated agent at our end to schedule appointments for you with businesses (B2B).",
+      icon: <Send className="w-8 h-8" />,
+      title: "Outbound Agents",
+      description: "These agents automate outreach campaigns across email, SMS, and calls. They qualify leads, follow up consistently, and update your CRM in real time—scaling your sales pipeline without burning out your team.",
       color: "text-ai-electric",
       bgColor: "bg-ai-electric/10"
     },
     {
-      icon: <Crown className="w-8 h-8" />,
-      title: "DEMO SCHEDULING",
-      description: "Mostly B2B Companies (Software, CRM etc.) hire a full-time dedicated agent at our end for Demo Scheduling. Just provide us with training materials and leave the rest to us.",
+      icon: <Home className="w-8 h-8" />,
+      title: "Real Estate Agents",
+      description: "AI real estate agents assist with property inquiries, schedule viewings, qualify buyers/renters, and follow up automatically. They reduce manual effort for brokers while keeping prospects engaged.",
       color: "text-ai-neon",
       bgColor: "bg-ai-neon/10"
     },
     {
-      icon: <Tablet className="w-8 h-8" />,
-      title: "LIVE TRANSFERS",
-      description: "You can hire a full-time dedicated resource at our end for getting your prospect transferred live to your agents (Example: Personal Insurance Brokers, Financial Advisors etc.).",
+      icon: <Car className="w-8 h-8" />,
+      title: "Car Dealership Agents",
+      description: "Dealership agents automate lead responses, test drive scheduling, and financing pre-qualification. They ensure buyers get fast answers and dealerships capture every sales opportunity without relying on manual callbacks.",
       color: "text-ai-warm",
       bgColor: "bg-ai-warm/10"
     },
     {
-      icon: <Layout className="w-8 h-8" />,
-      title: "UI / UX DESIGN",
-      description: "We also specialize in hiring dedicated UI/UX Assistant Designers' for mostly Software and Web/App Development Companies.",
+      icon: <Database className="w-8 h-8" />,
+      title: "RAG Agents (Retrieval-Augmented Generation)",
+      description: "RAG agents connect to your knowledge base, documents, and CRM to deliver accurate, context-aware responses. Perfect for industries that require precise, up-to-date information like finance, healthcare, or SaaS.",
       color: "text-primary",
       bgColor: "bg-primary/10"
     },
     {
-      icon: <Code className="w-8 h-8" />,
-      title: "WEB DEVELOPMENT",
-      description: "Website Development companies hire an assistant agent with us for Building, Creating and maintaining websites. Including HTML/CSS, .Net, Responsive design, JavaScript, WordPress E-Commerce, Testing and debugging.",
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: "Sales Call Analyzer Agents",
+      description: "These agents listen to and transcribe sales calls, then use AI to evaluate performance. They identify missed opportunities, track customer sentiment, and provide actionable insights to improve closing rates.",
       color: "text-ai-electric",
       bgColor: "bg-ai-electric/10"
     }
@@ -62,7 +61,7 @@ const Services = () => {
               <span className="text-primary glow-text">AI Solutions</span> That Scale
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We bridge the gap between people and possibilities, blending human expertise with intelligent automation to move businesses forward.
+              We design intelligent agents that automate repetitive tasks, improve accuracy, and free your team to focus on growth. Each agent is powered by AI to handle specialized workflows with speed and consistency.
             </p>
           </div>
 
