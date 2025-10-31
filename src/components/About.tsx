@@ -18,9 +18,6 @@ const About = () => {
     number: "300+",
     label: "Workflows Automated"
   }, {
-    number: "98%",
-    label: "Client Satisfaction"
-  }, {
     number: "60%",
     label: "Average Time Savings"
   }, {
