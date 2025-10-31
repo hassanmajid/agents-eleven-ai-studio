@@ -42,7 +42,7 @@ const Pricing = () => {
             <p className={`text-xl text-muted-foreground transition-all duration-700 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              Starting at $5000, we'll create and deliver your custom AI system. No subscriptions, No hidden fees.
+              Starting at $4999, we'll create and deliver your custom AI system. No subscriptions, No hidden fees.
             </p>
           </div>
 
@@ -58,13 +58,12 @@ const Pricing = () => {
                 Own Your AI System Outright
               </h3>
               <p className="text-lg text-muted-foreground mb-8">
-                For a one-time investment starting at $5,000, we'll build a custom AI automation system tailored to your business needs. 
-                Once delivered, it's yours forever—no recurring subscription fees.
+                For a one-time investment starting at $4999, we'll build you a complete AI automation system tailored entirely to your business. From inbound and outbound agents to appointment schedulers, RAG-powered knowledge assistants, and full business pipeline automation, you'll get an intelligent system that runs on its own. Once it's delivered, it's 100% yours no recurring fees, no platform lock-ins.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <div className="text-center">
-                  <span className="text-5xl md:text-6xl font-bold text-primary">$5,000</span>
+                  <span className="text-5xl md:text-6xl font-bold text-primary">$4,999</span>
                   <span className="text-xl text-muted-foreground ml-2">starting price</span>
                 </div>
               </div>
