@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Brain, Cog, Palette, Plug, Shield } from "lucide-react";
+import { Brain, Cog, Palette, Plug, Shield, Target } from "lucide-react";
 
 const Team = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,6 +56,12 @@ const Team = () => {
       description: "The guardian who brings everything to life and keeps it running at peak performance. They handle setup, testing, and ongoing optimization so your AI system keeps delivering results day after day.",
       icon: Shield,
       bgColor: "from-orange-500 to-red-500"
+    },
+    {
+      name: "Project Director",
+      description: "The orchestrator who keeps every moving piece aligned—from initial strategy to final deployment. They ensure timelines are met, goals stay clear, and your automation system launches exactly as envisioned.",
+      icon: Target,
+      bgColor: "from-indigo-500 to-purple-600"
     }
   ];
 
