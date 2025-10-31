@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Users, DollarSign, Calculator, Megaphone, Building2, 
-         Plane, Zap, Cross, Code, TrendingUp, Home } from "lucide-react";
+import { Shield, DollarSign, Megaphone, Plane, Cross, Code, Home, 
+         Car, ShoppingCart, GraduationCap, Bike, Wrench, Building2 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const Industries = () => {
@@ -43,76 +43,76 @@ const Industries = () => {
   }, []);
   const industries = [
     {
-      icon: <Shield className="w-6 h-6" />,
-      name: "Insurance Brokers",
-      description: "Commercial & Personal Lines",
+      icon: <Car className="w-6 h-6" />,
+      name: "Auto Dealerships",
+      description: "AI agents handle lead responses, schedule test drives, and follow up instantly turning interest into confirmed sales.",
       gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      name: "Employee Benefits",
-      description: "HR & Benefits Consulting",
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: <DollarSign className="w-6 h-6" />,
-      name: "Financial Advisors",
-      description: "Investment & Wealth Management",
-      gradient: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: <Calculator className="w-6 h-6" />,
-      name: "CPA's & Accountants",
-      description: "Tax & Accounting Services",
-      gradient: "from-orange-500 to-red-500"
-    },
-    {
-      icon: <Megaphone className="w-6 h-6" />,
-      name: "Digital Marketing",
-      description: "Online Marketing Agencies",
-      gradient: "from-pink-500 to-rose-500"
-    },
-    {
-      icon: <Building2 className="w-6 h-6" />,
-      name: "Advertising Agencies",
-      description: "Creative & Media Services",
-      gradient: "from-indigo-500 to-purple-500"
-    },
-    {
-      icon: <TrendingUp className="w-6 h-6" />,
-      name: "Fund Raising",
-      description: "Capital & Investment Services",
-      gradient: "from-teal-500 to-blue-500"
     },
     {
       icon: <Plane className="w-6 h-6" />,
       name: "Tourism & Travel",
-      description: "Travel & Hospitality Services",
+      description: "Automate booking confirmations, itinerary planning, and 24/7 customer support with conversational AI that never sleeps.",
       gradient: "from-sky-500 to-cyan-500"
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      name: "Utilities",
-      description: "Energy & Infrastructure",
-      gradient: "from-yellow-500 to-orange-500"
-    },
-    {
-      icon: <Cross className="w-6 h-6" />,
-      name: "Medical Practices",
-      description: "Healthcare Services",
-      gradient: "from-red-500 to-pink-500"
-    },
-    {
-      icon: <Code className="w-6 h-6" />,
-      name: "Software Companies",
-      description: "B2B Tech Solutions",
-      gradient: "from-violet-500 to-purple-500"
     },
     {
       icon: <Home className="w-6 h-6" />,
       name: "Real Estate",
-      description: "Property & Investment",
+      description: "Streamline property inquiries, viewing appointments, and follow-ups with smart lead qualification and CRM integration.",
       gradient: "from-emerald-500 to-teal-500"
+    },
+    {
+      icon: <Code className="w-6 h-6" />,
+      name: "Software Companies",
+      description: "Deploy RAG agents, support bots, and demo schedulers that help you scale customer onboarding and client management.",
+      gradient: "from-violet-500 to-purple-500"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      name: "Insurance Brokers",
+      description: "Automate quote requests, policy updates, and live transfers for faster customer handling and higher conversion rates.",
+      gradient: "from-blue-500 to-indigo-500"
+    },
+    {
+      icon: <Cross className="w-6 h-6" />,
+      name: "Healthcare & Clinics",
+      description: "Let AI handle patient intake, appointment scheduling, and follow-up reminders freeing staff to focus on care.",
+      gradient: "from-red-500 to-pink-500"
+    },
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      name: "Financial Services",
+      description: "Automate consultations, application tracking, and document processing while maintaining accuracy and compliance.",
+      gradient: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: <ShoppingCart className="w-6 h-6" />,
+      name: "E-Commerce",
+      description: "Offer personalized shopping assistance, order tracking, and customer service through AI-driven chat and email agents.",
+      gradient: "from-orange-500 to-red-500"
+    },
+    {
+      icon: <GraduationCap className="w-6 h-6" />,
+      name: "Education & E-Learning",
+      description: "AI tutors and enrollment agents guide students, manage signups, and handle course-related support in real time.",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: <Bike className="w-6 h-6" />,
+      name: "Power Sports & Equipment",
+      description: "AI agents manage dealer inquiries, maintenance schedules, and lead generation for motorcycles, boats, and ATVs.",
+      gradient: "from-yellow-500 to-orange-500"
+    },
+    {
+      icon: <Wrench className="w-6 h-6" />,
+      name: "Home Services",
+      description: "From cleaning to renovation, AI scheduling agents coordinate service requests, dispatch teams, and confirm bookings.",
+      gradient: "from-teal-500 to-blue-500"
+    },
+    {
+      icon: <Megaphone className="w-6 h-6" />,
+      name: "Marketing & Agencies",
+      description: "Automate outreach, campaign reporting, and lead nurturing—so your team focuses on creativity, not admin work.",
+      gradient: "from-pink-500 to-rose-500"
     }
   ];
 
@@ -137,9 +137,7 @@ const Industries = () => {
             <p className={`text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto transition-all duration-700 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              From auto dealerships to home services, from digital marketing to healthcare — AI is transforming every industry it touches. 
-              Whether you're in retail, insurance, software, real estate, or travel, intelligent automation is your next competitive edge. 
-              <span className="font-bold text-primary"> If there's a process, AI can make it smarter.</span>
+              From auto dealerships to healthcare, our AI agents adapt to any industry automating processes, managing leads, scheduling appointments, and delivering results that scale.
             </p>
           </div>
 
