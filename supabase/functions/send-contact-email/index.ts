@@ -59,7 +59,7 @@ const handler = async (req: Request): Promise<Response> => {
     
     const emailData = [
       `From: ${smtpUser}`,
-      `To: mason@agentseleven.com`,
+      `To: hassanmajid1996@gmail.com`,
       `Subject: New Contact Form Submission from ${name} - ${companyName}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/plain; charset=utf-8`,
@@ -97,7 +97,7 @@ const handler = async (req: Request): Promise<Response> => {
     await sendCommand(btoa(smtpUser));
     await sendCommand(btoa(smtpPassword));
     await sendCommand(`MAIL FROM:<${smtpUser}>`);
-    await sendCommand(`RCPT TO:<mason@agentseleven.com>`);
+    await sendCommand(`RCPT TO:<hassanmajid1996@gmail.com>`);
     await sendCommand("DATA");
     await conn.write(encoder.encode(emailData + "\r\n.\r\n"));
     await readResponse();
