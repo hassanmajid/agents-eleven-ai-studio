@@ -32,7 +32,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Processing contact form submission:", { name, companyName, email, interestedIn });
 
     const emailResponse = await resend.emails.send({
-      from: "Agent Eleven <onboarding@resend.dev>",
+      from: "Agent Eleven <noreply@agentseleven.com>",
       to: ["mason@agentseleven.com"],
       subject: `New Contact Form Submission from ${name} - ${companyName}`,
       html: `
