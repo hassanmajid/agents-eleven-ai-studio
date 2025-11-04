@@ -1,4 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { Resend } from "npm:resend@2.0.0";
+
+const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -28,84 +31,25 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Processing contact form submission:", { name, companyName, email, interestedIn });
 
-    // Get SMTP credentials from environment
-    const smtpHost = Deno.env.get("SMTP_HOST");
-    const smtpPort = Deno.env.get("SMTP_PORT");
-    const smtpUser = Deno.env.get("SMTP_USER");
-    const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-
-    if (!smtpHost || !smtpPort || !smtpUser || !smtpPassword) {
-      throw new Error("SMTP credentials not configured");
-    }
-
-    // Create email content
-    const emailBody = `
-      New Contact Form Submission
-      
-      Name: ${name}
-      Designation: ${designation}
-      Company Name: ${companyName}
-      Industry: ${industry}
-      Contact Number: ${contactNumber}
-      Email: ${email}
-      Interested In: ${interestedIn}
-      
-      Comments:
-      ${comments}
-    `;
-
-    // Use SMTP to send email
-    const boundary = "----WebKitFormBoundary" + Math.random().toString(36);
-    
-    const emailData = [
-      `From: ${smtpUser}`,
-      `To: hassanmajid1996@gmail.com`,
-      `Subject: New Contact Form Submission from ${name} - ${companyName}`,
-      `MIME-Version: 1.0`,
-      `Content-Type: text/plain; charset=utf-8`,
-      ``,
-      emailBody
-    ].join("\r\n");
-
-    // Connect to SMTP server using TLS
-    const conn = await Deno.connectTls({
-      hostname: smtpHost,
-      port: parseInt(smtpPort),
+    const emailResponse = await resend.emails.send({
+      from: "Agent Eleven <onboarding@resend.dev>",
+      to: ["hassanmajid1996@gmail.com"],
+      subject: `New Contact Form Submission from ${name} - ${companyName}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Designation:</strong> ${designation}</p>
+        <p><strong>Company Name:</strong> ${companyName}</p>
+        <p><strong>Industry:</strong> ${industry}</p>
+        <p><strong>Contact Number:</strong> ${contactNumber}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Interested In:</strong> ${interestedIn}</p>
+        <h3>Comments:</h3>
+        <p>${comments}</p>
+      `,
     });
 
-    const encoder = new TextEncoder();
-    const decoder = new TextDecoder();
-
-    // Helper function to read SMTP response
-    const readResponse = async () => {
-      const buffer = new Uint8Array(1024);
-      const n = await conn.read(buffer);
-      if (n === null) return "";
-      return decoder.decode(buffer.subarray(0, n));
-    };
-
-    // Helper function to send SMTP command
-    const sendCommand = async (command: string) => {
-      await conn.write(encoder.encode(command + "\r\n"));
-      return await readResponse();
-    };
-
-    // SMTP conversation
-    await readResponse(); // Read server greeting
-    await sendCommand(`EHLO ${smtpHost}`);
-    await sendCommand(`AUTH LOGIN`);
-    await sendCommand(btoa(smtpUser));
-    await sendCommand(btoa(smtpPassword));
-    await sendCommand(`MAIL FROM:<${smtpUser}>`);
-    await sendCommand(`RCPT TO:<hassanmajid1996@gmail.com>`);
-    await sendCommand("DATA");
-    await conn.write(encoder.encode(emailData + "\r\n.\r\n"));
-    await readResponse();
-    await sendCommand("QUIT");
-
-    conn.close();
-
-    console.log("Email sent successfully");
+    console.log("Email sent successfully:", emailResponse);
 
     return new Response(
       JSON.stringify({ success: true, message: "Email sent successfully" }),
