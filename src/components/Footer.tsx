@@ -3,30 +3,29 @@ import { Phone, Mail, Globe } from "lucide-react";
 const Footer = () => {
   const industries = [
     "Accountants",
-    "Insurance", 
+    "Insurance",
     "Digital Marketing",
     "Traditional Marketing",
     "Automotive",
     "Real Estate",
-    "Software Companies"
+    "Software Companies",
   ];
 
   const services = [
     "Telemarketing Campaigns",
     "Appointment Scheduling",
-    "Demo Scheduling", 
+    "Demo Scheduling",
     "Live Transfers",
     "Customer Service (Inbound Calls)",
-    "Data Entry Service"
+    "Data Entry Service",
   ];
 
-  const sitemapLinks = [
-    "Terms & Conditions",
-    "Privacy Policy"
-  ];
+  const sitemapLinks = ["Terms & Conditions", "Privacy Policy"];
 
   return (
     <footer className="bg-gradient-to-br from-card to-card/80 border-t border-primary/20">
+      <elevenlabs-convai agent-id="agent_0401k9vt3aqxef2r710y5jt66mm8"></elevenlabs-convai>
+      <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
         {/* Top Section with Company Info and Contact */}
@@ -37,12 +36,10 @@ const Footer = () => {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">A11</span>
               </div>
-              <div className="font-bold text-2xl text-foreground">
-                AGENTS - 11
-              </div>
+              <div className="font-bold text-2xl text-foreground">AGENTS - 11</div>
             </div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              AgentsEleven bridges the gap between businesses and their clients. We go the extra mile to guarantee 
+              AgentsEleven bridges the gap between businesses and their clients. We go the extra mile to guarantee
               exceptional quality incoming & outgoing Telephone Services.
             </p>
           </div>
@@ -130,7 +127,7 @@ const Footer = () => {
             <div className="text-muted-foreground">
               © Copyright 2022 <span className="text-primary">AgentsEleven</span>
             </div>
-            
+
             {/* Payment Methods */}
             <div className="flex items-center space-x-2">
               <div className="flex space-x-1">
