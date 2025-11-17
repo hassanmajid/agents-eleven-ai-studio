@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Disclaimer from "@/components/Disclaimer";
+import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <Contact />
       <Footer />
       <Disclaimer />
+      <ElevenLabsWidget />
     </div>
   );
 };
