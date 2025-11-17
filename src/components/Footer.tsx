@@ -27,13 +27,6 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-br from-card to-card/80 border-t border-primary/20">
-      {/* ElevenLabs Conversational AI Widget */}
-      <div 
-        className="py-6"
-        dangerouslySetInnerHTML={{
-          __html: `<elevenlabs-convai agent-id="agent_0401k9vt3aqxef2r710y5jt66mm8"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>`
-        }}
-      />
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
         {/* Top Section with Company Info and Contact */}
@@ -161,8 +154,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      
     </footer>
   );
 };
