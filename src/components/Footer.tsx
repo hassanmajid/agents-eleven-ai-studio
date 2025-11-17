@@ -154,6 +154,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* ElevenLabs Conversational AI Widget */}
+      <div 
+        className="py-6"
+        dangerouslySetInnerHTML={{
+          __html: `<elevenlabs-convai agent-id="agent_0401k9vt3aqxef2r710y5jt66mm8"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>`
+        }}
+      />
     </footer>
   );
 };
